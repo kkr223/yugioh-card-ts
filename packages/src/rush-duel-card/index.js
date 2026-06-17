@@ -1,6 +1,6 @@
 import { Group, Image, Rect, Text } from 'leafer-unified';
-import { Card } from '../card/index.js';
-import { CompressText } from '../compress-text/index.js';
+import { Card } from '../card/index.ts';
+import { CompressText } from '../compress-text/index.ts';
 import scStyle from './style/sc-style.js';
 import jpStyle from './style/jp-style.js';
 

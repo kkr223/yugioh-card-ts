@@ -13,6 +13,21 @@ const packageExternalSet = new Set([
 
 const external = id => Array.from(packageExternalSet).some(name => id === name || id.startsWith(`${name}/`));
 
+const rewriteDeclarationExtensions = directory => {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      rewriteDeclarationExtensions(entryPath);
+    } else if (entry.name.endsWith('.d.ts')) {
+      const source = fs.readFileSync(entryPath, 'utf8');
+      fs.writeFileSync(
+        entryPath,
+        source.replace(/(['"])(\.{1,2}\/[^'"]+)\.ts\1/g, '$1$2.js$1'),
+      );
+    }
+  }
+};
+
 const preserveModulesOutput = {
   preserveModules: true,
   preserveModulesRoot: 'packages',
@@ -53,16 +68,19 @@ export default defineConfig(({ mode }) => {
       ...(isLib ? [viteStaticCopy({
         targets: [
           { src: 'packages/package.json', dest: '.', rename: { stripBase: 1 } },
-          { src: ['LICENSE', 'README.md', 'README.en.md'], dest: '.' },
+          { src: ['LICENSE', 'README.md', 'README.en.md', 'MIGRATION.md'], dest: '.' },
         ],
       }), dts({
         tsconfigPath: path.resolve(__dirname, 'tsconfig.dts.json'),
-        include: ['packages/**/*.js'],
+        include: ['packages/**/*.js', 'packages/**/*.ts'],
         outDir: 'dist',
         entryRoot: 'packages',
         copyDtsFiles: false,
         insertTypesEntry: false,
         skipDiagnostics: false,
+        afterBuild: () => {
+          rewriteDeclarationExtensions(path.resolve(__dirname, 'dist'));
+        },
       })] : []),
     ],
     resolve: {

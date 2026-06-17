@@ -1,17 +1,17 @@
 import { Group, Image, Rect, Text } from 'leafer-unified';
-import { Card } from '../card/index.js';
-import { CompressText } from '../compress-text/index.js';
-import { numberToFull } from '../utils/index.js';
-import scStyle from './style/sc-style.js';
-import tcStyle from './style/tc-style.js';
-import jpStyle from './style/jp-style.js';
-import krStyle from './style/kr-style.js';
-import enStyle from './style/en-style.js';
-import astralStyle from './style/astral-style.js';
-import custom1Style from './style/custom1-style.js';
-import custom2Style from './style/custom2-style.js';
+import { Card } from '../card/index.ts';
+import { CompressText } from '../compress-text/index.ts';
+import { numberToFull } from '../utils/index.ts';
+import scStyle from './style/sc-style.ts';
+import tcStyle from './style/tc-style.ts';
+import jpStyle from './style/jp-style.ts';
+import krStyle from './style/kr-style.ts';
+import enStyle from './style/en-style.ts';
+import astralStyle from './style/astral-style.ts';
+import custom1Style from './style/custom1-style.ts';
+import custom2Style from './style/custom2-style.ts';
 
-export class YugiohCard extends Card {
+export class LegacyYugiohCardRenderer extends Card {
   cardLeaf = null;
   nameLeaf = null;
   attributeLeaf = null;
@@ -746,7 +746,7 @@ export class YugiohCard extends Card {
   }
 
   get baseImage() {
-    return `${this.resourcePath}/yugioh/image`;
+    return this.resourceUrl('/yugioh/image');
   }
 
   get style() {

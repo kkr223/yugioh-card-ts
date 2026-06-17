@@ -1,15 +1,15 @@
-<h1 align="center">🎉 Yu-Gi-Oh! Card - Yugioh Card 🎉</h1>
+<h1 align="center">Yu-Gi-Oh! Card - yugioh-card-ts</h1>
 
 <div align="center">
   <p><a href="./README.md">简体中文</a> | English</p>
 </div>
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/yugioh-card">
-    <img src="https://img.shields.io/npm/v/yugioh-card.svg">
+  <a href="https://www.npmjs.org/package/yugioh-card-ts">
+    <img src="https://img.shields.io/npm/v/yugioh-card-ts.svg">
   </a>
-  <a href="https://www.npmjs.org/package/yugioh-card">
-    <img src="https://img.shields.io/npm/dt/yugioh-card.svg">
+  <a href="https://www.npmjs.org/package/yugioh-card-ts">
+    <img src="https://img.shields.io/npm/dt/yugioh-card-ts.svg">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
@@ -17,6 +17,8 @@
 </p>
 
 <p align="center">A tool for rendering Yu-Gi-Oh! cards using Canvas</p>
+
+Upgrading from `yugioh-card`? Read the [2.0 migration guide](./MIGRATION.md).
 
 <p align="center">
   <img src="src/assets/image/banner.jpg">
@@ -37,13 +39,13 @@ Currently there are 5 types of cards: 🚀🚀🚀🚀🚀
 
 ## 🚩 Online Demo
 
-[Online Demo](https://kooriookami.github.io/yugioh-card/)
+[Online Demo](https://kkr223.github.io/yugioh-card-ts/)
 
 ## ⚡ Quick Start
 
 Requirements: Node.js 22+ and pnpm.
 
-`pnpm add yugioh-card`
+`pnpm add yugioh-card-ts leafer leafer-unified`
 
 ### Workspace Development
 
@@ -59,7 +61,7 @@ pnpm build:lib
 
 ```js
 // Optional: YugiohCard, RushDuelCard, YugiohBackCard, FieldCenterCard, YugiohSeries2Card
-import { YugiohCard } from 'yugioh-card';
+import { YugiohCard } from 'yugioh-card-ts';
 
 const card = new YugiohCard({
   view: 'xxx', // div container
@@ -70,7 +72,7 @@ const card = new YugiohCard({
 });
 
 // Export image, for more export options refer to https://www.leaferjs.com/ui/guide/basic/export.html
-card.leafer.export('xxx.png', {
+await card.export('xxx.png', {
   screenshot: true,
   pixelRatio: devicePixelRatio,
 });
@@ -80,12 +82,12 @@ card.leafer.export('xxx.png', {
 
 Before running the Node.js example, make sure your local Node.js version is 22 or higher.
 
-`pnpm add skia-canvas@2`
+`pnpm add @leafer/node skia-canvas@2`
 
 ```js
 import http from 'http';
 import skia from 'skia-canvas';
-import { YugiohCard } from 'yugioh-card';
+import { YugiohCard } from 'yugioh-card-ts';
 
 http.createServer((req, res) => {
   const card = new YugiohCard({
@@ -95,7 +97,7 @@ http.createServer((req, res) => {
     resourcePath: 'xxx', // path to static resources, copy src/assets/yugioh-card folder to your project or server
     skia: skia,
   });
-  card.leafer.export('png', {
+  card.export('png', {
     screenshot: true,
   }).then(result => {
     res.writeHead(200, { 'Content-Type': 'text/html' });

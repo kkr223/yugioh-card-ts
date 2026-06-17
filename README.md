@@ -1,15 +1,15 @@
-<h1 align="center">🎉 游戏王卡片 - Yugioh Card 🎉</h1>
+<h1 align="center">游戏王卡片 - yugioh-card-ts</h1>
 
 <div align="center">
   <p>简体中文 | <a href="./README.en.md">English</a></p>
 </div>
 
 <p align="center">
-  <a href="https://www.npmjs.org/package/yugioh-card">
-    <img src="https://img.shields.io/npm/v/yugioh-card.svg">
+  <a href="https://www.npmjs.org/package/yugioh-card-ts">
+    <img src="https://img.shields.io/npm/v/yugioh-card-ts.svg">
   </a>
-  <a href="https://www.npmjs.org/package/yugioh-card">
-    <img src="https://img.shields.io/npm/dt/yugioh-card.svg">
+  <a href="https://www.npmjs.org/package/yugioh-card-ts">
+    <img src="https://img.shields.io/npm/dt/yugioh-card-ts.svg">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
@@ -17,6 +17,8 @@
 </p>
 
 <p align="center">一个使用 Canvas 渲染游戏王卡片的工具</p>
+
+从 `yugioh-card` 升级时请阅读 [2.0 迁移指南](./MIGRATION.md)。
 
 <p align="center">
   <img src="src/assets/image/banner.jpg">
@@ -37,13 +39,13 @@
 
 ## 🚩 在线演示
 
-[在线演示](https://kooriookami.github.io/yugioh-card/)
+[在线演示](https://kkr223.github.io/yugioh-card-ts/)
 
 ## ⚡ 快速开始
 
 开发环境要求：Node.js 22+，pnpm。
 
-`pnpm add yugioh-card`
+`pnpm add yugioh-card-ts leafer leafer-unified`
 
 ### 仓库开发
 
@@ -59,7 +61,7 @@ pnpm build:lib
 
 ```js
 // 可选 YugiohCard, RushDuelCard, YugiohBackCard, FieldCenterCard, YugiohSeries2Card
-import { YugiohCard } from 'yugioh-card';
+import { YugiohCard } from 'yugioh-card-ts';
 
 const card = new YugiohCard({
   view: 'xxx', // div 容器
@@ -70,7 +72,7 @@ const card = new YugiohCard({
 });
 
 // 导出图片，更多导出参数请参考 https://www.leaferjs.com/ui/guide/basic/export.html
-card.leafer.export('xxx.png', {
+await card.export('xxx.png', {
   screenshot: true,
   pixelRatio: devicePixelRatio,
 });
@@ -80,12 +82,12 @@ card.leafer.export('xxx.png', {
 
 运行 Node.js 示例前，请先确保本地 Node.js 版本为 22 或更高。
 
-`pnpm add skia-canvas@2`
+`pnpm add @leafer/node skia-canvas@2`
 
 ```js
 import http from 'http';
 import skia from 'skia-canvas';
-import { YugiohCard } from 'yugioh-card';
+import { YugiohCard } from 'yugioh-card-ts';
 
 http.createServer((req, res) => {
   const card = new YugiohCard({
@@ -95,7 +97,7 @@ http.createServer((req, res) => {
     resourcePath: 'xxx', // 静态资源路径，把 src/assets/yugioh-card 文件夹复制到你的项目中或者服务器上
     skia: skia,
   });
-  card.leafer.export('png', {
+  card.export('png', {
     screenshot: true,
   }).then(result => {
     res.writeHead(200, { 'Content-Type': 'text/html' });

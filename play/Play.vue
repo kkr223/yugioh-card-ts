@@ -328,7 +328,8 @@ const isSplitConsistent = computed(() => {
 });
 
 const currentConfigText = computed(() => {
-  const { text, ...rest } = editableConfig;
+  const rest = { ...editableConfig };
+  delete rest.text;
   return JSON.stringify(rest, null, 2);
 });
 

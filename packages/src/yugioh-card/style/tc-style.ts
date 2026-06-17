@@ -1,15 +1,15 @@
-import { inheritProp } from '../../utils/index.js';
+import { defineYugiohCardStyle } from './types.ts';
 
-export default inheritProp({
-  fontFamily: 'custom2',
+export default defineYugiohCardStyle({
+  fontFamily: 'ygo-tc',
   name: {
-    top: 92,
+    top: 91,
     fontSize: 108,
   },
   spellTrap: {
     top: 250,
     fontSize: 76,
-    right: 104,
+    right: 138,
     icon: {
       marginTop: 12,
       marginLeft: 10,
@@ -24,7 +24,6 @@ export default inheritProp({
     top: 1525,
     fontSize: 44,
     lineHeight: 1.2,
-    textIndent: -0.4 * 44,
     minHeight: 10,
   },
   description: {

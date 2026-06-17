@@ -1,4 +1,4 @@
-import { inheritProp } from '../../utils/index.js';
+import { inheritProp } from '../../utils/index.ts';
 
 export default inheritProp({
   fontFamily: 'rd-jp',

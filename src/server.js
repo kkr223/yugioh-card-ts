@@ -1,6 +1,6 @@
 import http from 'http';
 import path from 'path';
-import { YugiohCard } from 'yugioh-card';
+import { YugiohCard } from 'yugioh-card-ts';
 import skia from 'skia-canvas';
 import yugiohDemo from '@/assets/demo/yugioh-demo';
 
@@ -14,7 +14,7 @@ global.__server__ = http.createServer((req, res) => {
     resourcePath: path.resolve('./src/assets/yugioh-card'),
     skia: skia,
   });
-  card.leafer.export('png', {
+  card.export('png', {
     screenshot: true,
   }).then(result => {
     res.writeHead(200, { 'Content-Type': 'text/html' });

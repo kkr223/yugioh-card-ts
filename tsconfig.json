@@ -3,29 +3,21 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
     "allowJs": true,
     "allowImportingTsExtensions": true,
     "checkJs": false,
     "strict": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationMap": false,
-    "stripInternal": false,
-    "rewriteRelativeImportExtensions": true,
+    "noEmit": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-    "rootDir": "packages"
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true
   },
   "include": [
     "packages/**/*.js",
     "packages/**/*.ts"
   ],
   "exclude": [
-    "**/__tests__/**"
+    "packages/**/__tests__/**"
   ]
 }

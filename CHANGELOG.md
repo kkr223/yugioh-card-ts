@@ -172,3 +172,13 @@ _2023-08-10_
 
 - 使用 Canvas 重构卡片渲染内核
 - 完善使用文档
+# 2.0.0
+
+- Renamed the package to `yugioh-card-ts`.
+- Added the versioned `YugiohCardDocument` API and legacy data adapters.
+- Added revision-based rendering, explicit readiness/export lifecycle, and
+  controlled layer extensions.
+- Added title shadows, rarity title presets, foreground images, configurable
+  effect boxes, and browser/Node resource path normalization.
+- Added strict TypeScript declarations while preserving the 1.x constructor
+  and `setData()` workflow.

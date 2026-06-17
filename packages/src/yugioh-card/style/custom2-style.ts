@@ -1,36 +1,34 @@
-import { inheritProp } from '../../utils/index.js';
+import { defineYugiohCardStyle } from './types.ts';
 
-export default inheritProp({
-  fontFamily: 'ygo-sc',
+export default defineYugiohCardStyle({
+  fontFamily: 'custom2',
   name: {
-    top: 97,
+    top: 92,
     fontSize: 108,
   },
   spellTrap: {
-    top: 254,
+    top: 250,
     fontSize: 76,
-    right: 134,
-    letterSpacing: 2,
+    right: 104,
     icon: {
-      marginTop: 8,
+      marginTop: 12,
       marginLeft: 10,
     },
   },
   pendulumDescription: {
-    top: 1282,
+    top: 1280,
     fontSize: 36,
-    letterSpacing: 2,
     lineHeight: 1.2,
   },
   effect: {
-    top: 1528,
+    top: 1525,
     fontSize: 44,
-    letterSpacing: 2,
     lineHeight: 1.2,
+    textIndent: -0.4 * 44,
+    minHeight: 10,
   },
   description: {
     fontSize: 36,
-    letterSpacing: 2,
     lineHeight: 1.2,
   },
 });

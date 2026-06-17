@@ -56,7 +56,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { onBeforeUnmount, onMounted, reactive, ref, shallowRef, watch } from 'vue';
-import { FieldCenterCard, RushDuelCard, YugiohBackCard, YugiohCard, YugiohSeries2Card } from 'yugioh-card';
+import { FieldCenterCard, RushDuelCard, YugiohBackCard, YugiohCard, YugiohSeries2Card } from 'yugioh-card-ts';
 import JsonEditorVue from 'json-editor-vue';
 import fieldCenterDemo from '@/assets/demo/field-center-demo';
 import rushDuelDemo from '@/assets/demo/rush-duel-demo';
@@ -115,7 +115,7 @@ const changeCard = () => {
   cardLeaf.value = new Card({
     view: card.value,
     data: form.data,
-    resourcePath: process.env.NODE_ENV === 'production' ? 'https://raw.githubusercontent.com/kooriookami/yugioh-card/refs/heads/master/src/assets/yugioh-card' : 'src/assets/yugioh-card',
+    resourcePath: process.env.NODE_ENV === 'production' ? 'https://raw.githubusercontent.com/kkr223/yugioh-card-ts/refs/heads/master/src/assets/yugioh-card' : 'src/assets/yugioh-card',
   });
   jsonData.value = form.data;
 };
@@ -131,13 +131,13 @@ watch(() => jsonData.value, () => {
   try {
     form.data = JSON.parse(jsonData.value);
     cardLeaf.value.setData(form.data);
-  } catch (e) {
+  } catch {
 
   }
 });
 
 const toGithub = () => {
-  open('https://github.com/kooriookami/yugioh-card');
+  open('https://github.com/kkr223/yugioh-card-ts');
 };
 </script>
 

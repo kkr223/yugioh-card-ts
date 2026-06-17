@@ -4,8 +4,8 @@ import path from 'node:path';
 import { useCanvas } from 'leafer-unified';
 import skia from 'skia-canvas';
 import { CompressText as OldCompressText } from 'yugioh-card-v190/src/compress-text/compress-text';
-import { loadFontNode } from '../../utils/index.js';
-import { CompressText as NewCompressText } from '../compress-text.js';
+import { loadFontNode } from '../../utils/index.ts';
+import { CompressText as NewCompressText } from '../compress-text.ts';
 
 useCanvas('skia', skia);
 loadFontNode(path.resolve('./src/assets/yugioh-card/yugioh/font'), skia);

@@ -1,6 +1,6 @@
-import { inheritProp } from '../../utils/index.js';
+import { defineYugiohCardStyle } from './types.ts';
 
-export default inheritProp({
+export default defineYugiohCardStyle({
   fontFamily: 'ygo-astral',
   name: {
     top: 107,

@@ -1,9 +1,11 @@
 import { defineConfig } from 'eslint/config';
 import pluginVue from 'eslint-plugin-vue';
 import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 import globals from 'globals';
 
 export default defineConfig([
+  ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
   {
@@ -75,8 +77,16 @@ export default defineConfig([
     },
   },
   {
+    files: ['packages/src/**/legacy-*.js'],
+    rules: {
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+  {
     ignores: [
       'node_modules',
+      'dist',
       'docs',
       'public',
     ],

@@ -1,5 +1,5 @@
 import { Image, Rect } from 'leafer-unified';
-import { Card } from '../card/index.js';
+import { Card } from '../card/index.ts';
 
 export class FieldCenterCard extends Card {
   cardLeaf = null;
