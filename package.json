@@ -1,0 +1,62 @@
+{
+  "name": "yugioh-card-ts",
+  "version": "2.0.0",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./document": {
+      "types": "./src/yugioh-card/document.d.ts",
+      "import": "./src/yugioh-card/document.js"
+    },
+    "./compress-text": {
+      "types": "./src/compress-text/index.d.ts",
+      "import": "./src/compress-text/index.js"
+    },
+    "./*": {
+      "types": "./*.d.ts",
+      "import": "./*.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kkr223/yugioh-card-ts"
+  },
+  "keywords": [
+    "yugioh-card-ts",
+    "yugioh-card",
+    "yugioh",
+    "rush-duel",
+    "ygo",
+    "leafer",
+    "canvas"
+  ],
+  "author": "kooriookami",
+  "license": "MIT",
+  "dependencies": {
+    "css-line-break": "^2.1.0"
+  },
+  "peerDependencies": {
+    "@leafer/node": "^2.0.4",
+    "leafer": "^2.0.4",
+    "leafer-unified": "^1.0.3",
+    "skia-canvas": "^2.0.2"
+  },
+  "peerDependenciesMeta": {
+    "@leafer/node": {
+      "optional": true
+    },
+    "skia-canvas": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "sideEffects": false
+}

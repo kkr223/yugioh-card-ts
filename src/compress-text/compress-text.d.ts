@@ -1,0 +1,78 @@
+import { LegacyCompressText } from './legacy-compress-text.js';
+import { IFontWeight, ITextAlign } from 'leafer-unified';
+export interface CompressTextData {
+    text: string | number;
+    fontFamily: string;
+    fontSize: number;
+    fontWeight: IFontWeight;
+    fontScale: number;
+    lineHeight: number;
+    letterSpacing: number;
+    wordSpacing: number;
+    firstLineCompress: boolean;
+    textAlign: ITextAlign;
+    textJustifyLast: boolean;
+    color: string;
+    strokeWidth: number;
+    gradient: boolean;
+    gradientColor1: string;
+    gradientColor2: string;
+    rtFontFamily: string;
+    rtFontSize: number;
+    rtFontWeight: IFontWeight;
+    rtFontScaleX: number;
+    rtLineHeight: number;
+    rtLetterSpacing: number;
+    rtColor: string;
+    rtStrokeWidth: number;
+    rtTop: number;
+    autoSmallSize: boolean;
+    smallFontSize: number;
+    width: number;
+    height: number;
+    x: number;
+    y: number;
+    zIndex: number;
+    visible: boolean;
+    opacity: number;
+    scaleX: number;
+    scaleY: number;
+}
+export interface CompressTextBounds {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+}
+export declare class CompressText extends LegacyCompressText {
+    text: string | number;
+    fontFamily: string;
+    fontSize: number;
+    fontWeight: IFontWeight;
+    fontScale: number;
+    lineHeight: number;
+    letterSpacing: number;
+    wordSpacing: number;
+    firstLineCompress: boolean;
+    textAlign: CompressTextData['textAlign'];
+    textJustifyLast: boolean;
+    color: string;
+    strokeWidth: number;
+    gradient: boolean;
+    gradientColor1: string;
+    gradientColor2: string;
+    rtFontFamily: string;
+    rtFontSize: number;
+    rtFontWeight: IFontWeight;
+    rtFontScaleX: number;
+    rtLineHeight: number;
+    rtLetterSpacing: number;
+    rtColor: string;
+    rtStrokeWidth: number;
+    rtTop: number;
+    autoSmallSize: boolean;
+    smallFontSize: number;
+    bounds: CompressTextBounds;
+    constructor(data?: Partial<CompressTextData>);
+    set(data?: Partial<CompressTextData>): void;
+}
