@@ -8,31 +8,13 @@ importers:
 
   .:
     dependencies:
-      '@element-plus/icons-vue':
-        specifier: ^2.3.2
-        version: 2.3.2(vue@3.5.30(typescript@6.0.2))
       css-line-break:
         specifier: ^2.1.0
         version: 2.1.0
-      element-plus:
-        specifier: ^2.13.6
-        version: 2.13.6(typescript@6.0.2)(vue@3.5.30(typescript@6.0.2))
-      json-editor-vue:
-        specifier: ^0.18.1
-        version: 0.18.1(vue@3.5.30(typescript@6.0.2))
-      normalize.css:
-        specifier: ^8.0.1
-        version: 8.0.1
-      vue:
-        specifier: ^3.5.30
-        version: 3.5.30(typescript@6.0.2)
-      yugioh-card-ts:
-        specifier: file:packages
-        version: file:packages(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer-unified@1.0.3(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(skia-canvas@2.0.2)
-      yugioh-card-v190:
-        specifier: npm:yugioh-card@1.9.2
-        version: yugioh-card@1.9.2(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)(@types/lodash-es@4.17.12)
     devDependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.2
+        version: 2.3.2(vue@3.5.30(typescript@6.0.2))
       '@iconify/vue':
         specifier: ^5.0.0
         version: 5.0.0(vue@3.5.30(typescript@6.0.2))
@@ -42,6 +24,9 @@ importers:
       '@vitejs/plugin-vue':
         specifier: ^6.0.5
         version: 6.0.5(vite@8.0.2(@types/node@25.5.0)(sass-embedded@1.98.0)(sass@1.98.0))(vue@3.5.30(typescript@6.0.2))
+      element-plus:
+        specifier: ^2.13.6
+        version: 2.13.6(typescript@6.0.2)(vue@3.5.30(typescript@6.0.2))
       eslint:
         specifier: ^9.39.2
         version: 9.39.4
@@ -54,12 +39,18 @@ importers:
       globals:
         specifier: ^17.4.0
         version: 17.4.0
+      json-editor-vue:
+        specifier: ^0.18.1
+        version: 0.18.1(vue@3.5.30(typescript@6.0.2))
       leafer:
         specifier: ^2.0.4
         version: 2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)
       leafer-unified:
         specifier: ^1.0.3
         version: 1.0.3(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))
+      normalize.css:
+        specifier: ^8.0.1
+        version: 8.0.1
       sass-embedded:
         specifier: ^1.98.0
         version: 1.98.0
@@ -84,6 +75,12 @@ importers:
       vite-plugin-static-copy:
         specifier: ^4.0.0
         version: 4.0.0(vite@8.0.2(@types/node@25.5.0)(sass-embedded@1.98.0)(sass@1.98.0))
+      vue:
+        specifier: ^3.5.30
+        version: 3.5.30(typescript@6.0.2)
+      yugioh-card-v190:
+        specifier: npm:yugioh-card@1.9.2
+        version: yugioh-card@1.9.2(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)(@types/lodash-es@4.17.12)
 
   packages:
 
@@ -3179,20 +3176,6 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  yugioh-card-ts@file:packages:
-    resolution: {directory: packages, type: directory}
-    engines: {node: '>=22'}
-    peerDependencies:
-      '@leafer/node': ^2.0.4
-      leafer: ^2.0.4
-      leafer-unified: ^1.0.3
-      skia-canvas: ^2.0.2
-    peerDependenciesMeta:
-      '@leafer/node':
-        optional: true
-      skia-canvas:
-        optional: true
 
   yugioh-card@1.9.2:
     resolution: {integrity: sha512-BgN+6iLD3o5hbv28+yFdXJttHMU32ApPJfLeVdSZnldbB6pt7mqNvkX16QtWFNE5Z6bCqA8qsuAvmQNp3+Q/3g==}
@@ -6928,15 +6911,6 @@ snapshots:
   yallist@4.0.0: {}
 
   yocto-queue@0.1.0: {}
-
-  yugioh-card-ts@file:packages(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer-unified@1.0.3(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(skia-canvas@2.0.2):
-    dependencies:
-      css-line-break: 2.1.0
-      leafer: 2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)
-      leafer-unified: 1.0.3(@leafer/node@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))(leafer@2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4))
-    optionalDependencies:
-      '@leafer/node': 2.0.4(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)
-      skia-canvas: 2.0.2
 
   yugioh-card@1.9.2(@leafer-ui/interface@2.0.4)(@leafer/interface@2.0.4)(@types/lodash-es@4.17.12):
     dependencies:
