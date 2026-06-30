@@ -171,10 +171,12 @@ test('foreground can avoid covering level, rank and link-marker overlays', async
   await card.whenReady();
   const internals = card as unknown as {
     foregroundLeaf: { zIndex?: number };
+    nameLeaf: { zIndex?: number };
     levelLeaf: { zIndex?: number };
     rankLeaf: { zIndex?: number };
     linkArrowLeaf: { zIndex?: number };
   };
+  assert.ok(Number(internals.nameLeaf.zIndex) > Number(internals.foregroundLeaf.zIndex));
   assert.ok(Number(internals.levelLeaf.zIndex) > Number(internals.foregroundLeaf.zIndex));
   assert.ok(Number(internals.rankLeaf.zIndex) > Number(internals.foregroundLeaf.zIndex));
   assert.ok(Number(internals.linkArrowLeaf.zIndex) > Number(internals.foregroundLeaf.zIndex));

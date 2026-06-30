@@ -438,6 +438,7 @@ export class YugiohCard extends LegacyYugiohCardRenderer {
     this.drawNameBlock(document);
     this.drawTitleShadow(document);
     this.drawForeground(document);
+    this.applyForegroundTitlePolicy();
     this.applyForegroundLevelPolicy(document);
     this.drawEffectBox(document);
     this.drawMark25th(document);
@@ -577,7 +578,7 @@ export class YugiohCard extends LegacyYugiohCardRenderer {
       height: nameLeaf.height,
       x: (nameLeaf.x ?? 0) + shadow.offsetX,
       y: (nameLeaf.y ?? 0) + shadow.offsetY,
-      zIndex: 9,
+      zIndex: 22,
       visible: nameLeaf.visible !== false,
       opacity: shadow.opacity,
       scaleX: nameLeaf.scaleX,
@@ -633,6 +634,11 @@ export class YugiohCard extends LegacyYugiohCardRenderer {
       visible,
       zIndex: 21,
     });
+  }
+
+  private applyForegroundTitlePolicy(): void {
+    const renderer = this as unknown as LegacyRendererShape;
+    renderer.nameLeaf?.set({ zIndex: 23 });
   }
 
   private applyForegroundLevelPolicy(document: YugiohCardDocument): void {
